@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import MyButton from '@/components/MyButton';
 import Counter from '@/components/Counter';
+import ProfileCard from '@/components/ProfileCard';
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
 
       <h2>useState 테스트</h2>
       <Counter />
+
+      <h2>팀 소개</h2>
+      <ProfileCard name='홍길동' job='퍼블리셔' />
+      <ProfileCard name='김개발' job='프론트엔드 개발자' />
     </main>
   );
 }
