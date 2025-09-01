@@ -1,9 +1,10 @@
-import './globals.css';
 import { Noto_Sans_KR } from 'next/font/google';
+import Link from 'next/link';
+import './globals.css';
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ['latin'],
-  weight: ['400', '500', '700'], // 필요 굵기 선택
+  weight: ['400', '500', '700'],
 });
 
 export const metadata = {
@@ -18,7 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={notoSansKR.className}>{children}</body>
+      <body className={notoSansKR.className}>
+        <header style={{ padding: '1rem', borderBottom: '1px solid #ddd' }}>
+          <nav style={{ display: 'flex', gap: '1rem' }}>
+            <Link href="/">홈</Link>
+            <Link href="/about">소개</Link>
+          </nav>
+        </header>
+        <main style={{ padding: '2rem' }}>{children}</main>
+      </body>
     </html>
   );
 }
