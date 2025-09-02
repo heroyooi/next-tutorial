@@ -47,6 +47,7 @@ export default function RootLayout({
             <Link href="/">홈</Link>
             <Link href="/about">소개</Link>
             <Link href="/posts">Posts</Link>
+            <Link href="/blog">블로그</Link>
           </nav>
         </header>
         <main className={styles.container}>{children}</main>
