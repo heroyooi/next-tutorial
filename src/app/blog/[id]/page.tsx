@@ -10,12 +10,13 @@ type Post = {
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`,
-    { cache: "no-store" }
-  );
+  const { id } = await params;
+
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: "no-store",
+  });
   if (!res.ok) {
     return <p>해당 글을 불러올 수 없습니다.</p>;
   }
@@ -29,4 +30,3 @@ export default async function BlogDetailPage({
     </article>
   );
 }
-
