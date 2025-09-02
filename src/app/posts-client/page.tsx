@@ -1,13 +1,20 @@
-'use client'; // 클라이언트 컴포넌트 선언
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
 
 export default function PostsClientPage() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const loadPosts = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const data = await res.json();
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data: Post[] = await res.json();
     setPosts(data.slice(0, 5));
   };
 
