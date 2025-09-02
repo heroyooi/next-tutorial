@@ -8,6 +8,32 @@ const notoSansKR = Noto_Sans_KR({
   weight: ["400", "500", "700"],
 });
 
+export const metadata = {
+  title: "Next.js 기초 강좌",
+  description: "Next.js 개념과 사용법을 배우는 기초 강좌",
+  openGraph: {
+    title: "Next.js 기초 강좌",
+    description: "Next.js 개념과 사용법을 배우는 기초 강좌",
+    url: "https://next-tutorial.vercel.app",
+    siteName: "Next.js 강좌",
+    images: [
+      {
+        url: "https://next-tutorial.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Next.js 기초 강좌",
+    description: "Next.js 개념과 사용법을 배우는 기초 강좌",
+    images: ["https://next-tutorial.vercel.app/og-image.png"],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
